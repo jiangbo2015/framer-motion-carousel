@@ -1,7 +1,27 @@
 {
   "name": "framer-motion-carousel",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A simple framer motion carousel component for React",
+  "keywords": [
+    "react",
+    "component",
+    "carousel",
+    "motion",
+    "framer",
+    "collapse",
+    "framer motion"
+  ],
+  "author": "jiangbo2015 <reactbo@gmail.com>",
+  "homepage": "https://github.com/jiangbo2015/framer-motion-carousel.git#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangbo2015/framer-motion-carousel.git",
+    "directory": "packages/accordion"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
