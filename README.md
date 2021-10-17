@@ -1,5 +1,6 @@
 # framer-motion-carousel
 
+A simple framer-motion-carousel
 
 ## Usage
 
@@ -24,4 +25,12 @@ const App = () => (
     </Carousel>
 )
 export default App
+```
+
+## Development
+
+```
+yarn install
+
+yarn build
 ```
