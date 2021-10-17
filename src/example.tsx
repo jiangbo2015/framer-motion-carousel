@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Carousel from './carousel'
 
-const colors = ["#eee", "#000", "red"]
+const colors = ["#f90", "#ef0", "#e0f"]
 
 const App = () => (
     <Carousel>

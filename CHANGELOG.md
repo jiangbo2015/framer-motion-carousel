@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.2
+
+custom arrows
+
 ## 1.0.1
 
 add some meta info

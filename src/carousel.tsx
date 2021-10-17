@@ -9,7 +9,6 @@ import {
     useMotionValue,
 } from "framer-motion"
 
-
 const containerStyle: React.CSSProperties = {
     position: "relative",
     width: "100%",
@@ -30,8 +29,6 @@ const transition: AnimationOptions<any> = {
     bounce: 0,
 }
 
-const colors = ["#eee", "#000", "red"]
-
 const Contaier = React.forwardRef<
     HTMLDivElement,
     { children: React.ReactNode }
@@ -41,17 +38,13 @@ const Contaier = React.forwardRef<
     </div>
 ))
 
-const Slider = ({
-    x,
-    i,
-    onDragEnd,
-    children,
-}: {
+type SliderProps = {
     x: MotionValue<number>
     i: number
     children: React.ReactNode
     onDragEnd: (e: Event, dragProps: PanInfo) => void
-}) => (
+}
+const Slider = ({ x, i, onDragEnd, children }: SliderProps) => (
     <motion.div
         style={{
             ...pageStyle,
@@ -67,7 +60,57 @@ const Slider = ({
     </motion.div>
 )
 
-const Carousel = ({ children }: { children: React.ReactNode }) => {
+const baseArrowStyle: React.CSSProperties = {
+    position: "absolute",
+    width: "50px",
+    height: "50px",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    top: "50%",
+    transform: "translateY(-50%)",
+    borderRadius: "50%",
+    color: "#fff",
+    fontSize: "20px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+}
+
+type ArrowProps = {
+    onClick: () => void
+    left?: boolean
+    children: React.ReactNode
+}
+
+const Arrow = ({ left = false, children, onClick }: ArrowProps) => (
+    <div
+        onClick={onClick}
+        style={{
+            ...baseArrowStyle,
+            left: left ? "20px" : "initial",
+            right: !left ? "10px" : "initial",
+        }}
+    >
+        {children}
+    </div>
+)
+
+type CarouselProps = {
+    children: React.ReactNode
+    renderArrowLeft?: (args: {
+        handlePrev: () => void
+        activeIndex: number
+    }) => void
+    renderArrowRight?: (args: {
+        handleNext: () => void
+        activeIndex: number
+    }) => void
+}
+export const Carousel = ({
+    children,
+    renderArrowLeft,
+    renderArrowRight,
+}: CarouselProps) => {
     const x = useMotionValue(0)
     const containerRef = React.useRef<HTMLDivElement>(null)
     const [index, setIndex] = React.useState(0)
@@ -81,12 +124,22 @@ const Carousel = ({ children }: { children: React.ReactNode }) => {
         const { offset } = dragProps
 
         if (offset.x > clientWidth / 4) {
-            setIndex(index - 1)
+            handlePrev()
         } else if (offset.x < -clientWidth / 4) {
-            setIndex(index + 1)
+            handleNext()
         } else {
             animate(x, calculateNewX(), transition)
         }
+    }
+
+    const childrens = React.Children.toArray(children)
+
+    const handleNext = () => {
+        setIndex(index + 1 === childrens.length ? index : index + 1)
+    }
+
+    const handlePrev = () => {
+        setIndex(index - 1 < 0 ? 0 : index - 1)
     }
 
     React.useEffect(() => {
@@ -96,15 +149,26 @@ const Carousel = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <Contaier ref={containerRef}>
-            {React.Children.toArray(children).map((child, i) => (
+            {childrens.map((child, i) => (
                 <Slider onDragEnd={handleEndDrag} x={x} i={i}>
                     {child}
                 </Slider>
             ))}
+            {renderArrowLeft ? (
+                renderArrowLeft({ handlePrev, activeIndex: index })
+            ) : (
+                <Arrow left onClick={handlePrev}>
+                    &larr;
+                </Arrow>
+            )}
+
+            {renderArrowRight ? (
+                renderArrowRight({ handleNext, activeIndex: index })
+            ) : (
+                <Arrow onClick={handleNext}>&rarr;</Arrow>
+            )}
         </Contaier>
     )
 }
 
 export default Carousel
-
-

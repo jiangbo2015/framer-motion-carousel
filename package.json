@@ -1,6 +1,6 @@
 {
   "name": "framer-motion-carousel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple framer motion carousel component for React",
   "keywords": [
     "react",
@@ -27,10 +27,10 @@
     "prebuild": "rimraf dist",
     "start": "nodemon --watch src --exec yarn build -e ts,tsx",
     "build": "yarn build:esm & yarn build:cjs & yarn build:types",
-    "build:esm": "cross-env BABEL_ENV=esm babel src --extensions .ts,.tsx -d dist/esm --source-maps",
-    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts,.tsx -d dist/cjs --source-maps",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --extensions .ts,.tsx -d dist/esm",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts,.tsx -d dist/cjs",
     "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
-    "publish": "yarn build && npm publish"
+    "pub": "yarn build && npm publish"
   },
   "dependencies": {
     "framer-motion": "^4.1.17"
