@@ -29,7 +29,7 @@ export default App
 
 ## Example
 
-![example](img.jpg)
+![example](https://raw.githubusercontent.com/jiangbo2015/framer-motion-carousel/main/img.jpg)
 
 ## Use your arrows
 

@@ -170,5 +170,3 @@ export const Carousel = ({
         </Contaier>
     )
 }
-
-export default Carousel

@@ -1,1 +1,1 @@
-export * from "./carousel"
+export { Carousel as default } from "./carousel"

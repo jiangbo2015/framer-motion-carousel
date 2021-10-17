@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.3
+
+fix export default from syntax
+
 ## 1.0.2
 
 custom arrows
