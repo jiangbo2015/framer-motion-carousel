@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.0.5
+
+support custom dots
+
+## 1.0.4
+
+add a live demo
+
 ## 1.0.3
 
 fix export default from syntax
