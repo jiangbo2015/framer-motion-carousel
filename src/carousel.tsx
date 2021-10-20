@@ -42,6 +42,7 @@ export const Carousel = ({
     renderDots,
     autoPlay = true,
     interval = 2000,
+    loop = true,
 }: CarouselProps) => {
     const x = useMotionValue(0)
     const containerRef = React.useRef<HTMLDivElement>(null)
@@ -67,11 +68,13 @@ export const Carousel = ({
     const childrens = React.Children.toArray(children)
 
     const handleNext = () => {
-        setIndex(index + 1 === childrens.length ? index : index + 1)
+        const idx = loop ? 0 : index;
+        setIndex(index + 1 === childrens.length ? idx : index + 1)
     }
 
     const handlePrev = () => {
-        setIndex(index - 1 < 0 ? 0 : index - 1)
+        const idx = loop ? childrens.length - 1: 0;
+        setIndex(index - 1 < 0 ? idx : index - 1)
     }
 
     React.useEffect(() => {
@@ -84,7 +87,7 @@ export const Carousel = ({
             return
         }
         const timer = setInterval(() => handleNext(), interval)
-        return clearInterval(timer)
+        return () => clearInterval(timer)
     }, [handleNext, interval])
 
     return (

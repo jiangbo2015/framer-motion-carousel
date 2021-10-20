@@ -60,6 +60,7 @@ export default App;
 
 | props            | type                                                                                 | default | description        |
 |------------------|--------------------------------------------------------------------------------------|---------|--------------------|
+| loop             | boolean                                                                              | true    | loop play          |
 | autoPlay         | boolean                                                                              | true    | auto play          |
 | interval         | number                                                                               | 2000    | auto play interval |
 | renderArrowLeft  | ({handlePrev: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows |

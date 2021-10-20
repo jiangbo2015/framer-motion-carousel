@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.6
+
+- support loop play
+- fix auto play
+
 ## 1.0.5
 
 support custom dots

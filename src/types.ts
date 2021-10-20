@@ -13,6 +13,7 @@ export type CarouselProps = {
     renderDots?: (args: Omit<DotProps, 'length'>) => React.ReactNode
     autoPlay: boolean
     interval: number
+    loop: boolean
 }
 
 export type ArrowProps = {
