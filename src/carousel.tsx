@@ -80,8 +80,8 @@ export const Carousel = ({
     }, [index])
 
     React.useEffect(() => {
-        if(!autoPlay) {
-            return;
+        if (!autoPlay) {
+            return
         }
         const timer = setInterval(() => handleNext(), interval)
         return clearInterval(timer)
@@ -90,7 +90,7 @@ export const Carousel = ({
     return (
         <Contaier ref={containerRef}>
             {childrens.map((child, i) => (
-                <Slider onDragEnd={handleEndDrag} x={x} i={i}>
+                <Slider onDragEnd={handleEndDrag} x={x} i={i} key={i}>
                     {child}
                 </Slider>
             ))}
@@ -114,7 +114,11 @@ export const Carousel = ({
             {renderDots ? (
                 renderDots({ setActiveIndex: setIndex, activeIndex: index })
             ) : (
-                <Dots length={childrens.length} setActiveIndex={setIndex} activeIndex={index} />
+                <Dots
+                    length={childrens.length}
+                    setActiveIndex={setIndex}
+                    activeIndex={index}
+                />
             )}
         </Contaier>
     )
