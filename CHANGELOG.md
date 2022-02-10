@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.7
+
+- [pull request #4](https://github.com/jiangbo2015/framer-motion-carousel/pull/4)
+
 ## 1.0.6
 
 - support loop play
