@@ -2,6 +2,9 @@
 
 A simple `framer-motion-carousel`, used for `framer-motion`, `chakra-ui`
 support `click` and `swipe`, support custom `arrows`, `dots`, easy to use.
+
+*2.x use `framer-motion@6` now*
+
 ## Basic Usage
 
 ```jsx
@@ -53,19 +56,21 @@ export default App;
 
 [Live Demo](https://carousel-app-772051431.vercel.app)
 
-![example](./img.jpg)
+[example repo](https://github.com/jiangbo2015/framer-motion-carousel/tree/main/example)
+
+![example](https://cdn.jsdelivr.net/gh/jiangbo2015/framer-motion-carousel/img.jpg)
 
 
 ## props
 
-| props            | type                                                                                 | default | description        |
-|------------------|--------------------------------------------------------------------------------------|---------|--------------------|
-| loop             | boolean                                                                              | true    | loop play          |
-| autoPlay         | boolean                                                                              | true    | auto play          |
-| interval         | number                                                                               | 2000    | auto play interval |
-| renderArrowLeft  | ({handlePrev: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows |
-| renderArrowRight | ({handleNext: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows |
-| renderDots       | ({activeIndex: number, setActiveIndex: (index: number) => void;}) => React.ReactNode | null    | custom your dots   |
+| props            | type                                                                                 | default | description                                        |
+|------------------|--------------------------------------------------------------------------------------|---------|----------------------------------------------------|
+| loop             | boolean                                                                              | true    | loop play                                          |
+| autoPlay         | boolean                                                                              | true    | auto play                                          |
+| interval         | number                                                                               | 2000    | auto play interval                                 |
+| renderArrowLeft  | ({handlePrev: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows, `activeIndex` is current index |
+| renderArrowRight | ({handleNext: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows, `activeIndex` is current index |
+| renderDots       | ({activeIndex: number, setActiveIndex: (index: number) => void;}) => React.ReactNode | null    | custom your dots, `activeIndex` is current index   |
 
 
 
