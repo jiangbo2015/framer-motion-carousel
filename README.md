@@ -53,7 +53,7 @@ export default App;
 
 [Live Demo](https://carousel-app-772051431.vercel.app)
 
-![example](https://raw.githubusercontent.com/jiangbo2015/framer-motion-carousel/main/img.jpg)
+![example](./img.jpg)
 
 
 ## props
@@ -69,10 +69,10 @@ export default App;
 
 
 
-## Development
+## example
 
 ```
-yarn install
+cd example && yarn install
 
-yarn build
+yarn dev
 ```
