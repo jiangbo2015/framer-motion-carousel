@@ -1,6 +1,6 @@
 {
   "name": "framer-motion-carousel",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "A simple framer motion carousel component for React",
   "keywords": [
     "react",
@@ -35,7 +35,7 @@
     "pub": "yarn build && npm publish"
   },
   "dependencies": {
-    "framer-motion": "^4.1.17"
+    "framer-motion": "^6.3.11"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
