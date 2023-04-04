@@ -8,7 +8,7 @@ import {
     useMotionValue,
 } from "framer-motion"
 
-import { CarouselProps } from "./types"
+import { CarouselProps, CarouselRef } from "./types"
 import Arrow from "./arrow"
 import Slider from "./slider"
 import Dots from "./dots"
@@ -35,7 +35,7 @@ const Contaier = React.forwardRef<
     </div>
 ))
 
-export const Carousel = ({
+export const Carousel = React.forwardRef(({
     children,
     renderArrowLeft,
     renderArrowRight,
@@ -43,7 +43,7 @@ export const Carousel = ({
     autoPlay = true,
     interval = 2000,
     loop = true,
-}: CarouselProps) => {
+}: CarouselProps, ref: React.Ref<CarouselRef>) => {
     const x = useMotionValue(0)
     const containerRef = React.useRef<HTMLDivElement>(null)
     const [index, setIndex] = React.useState(0)
@@ -90,6 +90,14 @@ export const Carousel = ({
         return () => clearInterval(timer)
     }, [handleNext, interval])
 
+    React.useImperativeHandle(ref, () => {
+        return {
+            handleNext,
+            handlePrev,
+            setIndex,
+        };
+      }, [index]);
+
     return (
         <Contaier ref={containerRef}>
             {childrens.map((child, i) => (
@@ -125,4 +133,4 @@ export const Carousel = ({
             )}
         </Contaier>
     )
-}
+})

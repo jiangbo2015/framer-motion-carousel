@@ -84,10 +84,10 @@ caniuse-lite@^1.0.30001332:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001356.tgz#cbf5fe7b33f90962bfbca532212ea478d4ec9de8"
   integrity sha512-/30854bktMLhxtjieIxsrJBfs2gTM1pel6MXKF3K+RdIVJZcsn2A2QdhsuR4/p9+R204fZw0zCBBhktX8xWuyQ==
 
-framer-motion-carousel@^2.0.0-beta.0:
-  version "2.0.0-beta.0"
-  resolved "https://registry.npmjs.org/framer-motion-carousel/-/framer-motion-carousel-2.0.0-beta.0.tgz#b193b570d2a707b68f81209e5358f33336a0f9f2"
-  integrity sha512-Z6Ou8qAE2Rx/zcD/T+NEd2kAhlhzyn6FRuGJRGzKyh5yeA1g2yIe9jteUQNwert+EagpCWPRYrduzNfZfova2Q==
+framer-motion-carousel@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/framer-motion-carousel/-/framer-motion-carousel-2.0.3.tgz#f73fee56499c93ef75aebe528198fea014eaf9c1"
+  integrity sha512-x/sJsSUd1G/MF2vuLkJyxyiA0RbeE4ZvVb7Z95arF1wlA5efOHJBPDY7Ou91nyy2/nvr2nqSfxuFhTZ6dsWxXA==
   dependencies:
     framer-motion "^6.3.11"
 

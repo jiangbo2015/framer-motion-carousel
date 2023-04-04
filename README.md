@@ -52,6 +52,32 @@ export default App;
 </div>
 ```
 
+## use external control button
+
+```jsx
+// set ref;
+const carouselRef = React.useRef();
+
+<div style={{ width: 600, height: 400, margin: "0 auto" }}>
+    <div style={{display: 'flex', gap: '10px', marginBottom: '10px'}}>
+        <button onClick={() => carouselRef.current.handlePrev()}>handlePrev</button>
+        <button onClick={() => carouselRef.current.setIndex(2)}>goto index 2</button>
+        <button onClick={() => carouselRef.current.handleNext()}>handleNext</button>
+    </div>
+    <Carousel ref={carouselRef} autoPlay={false}>
+        {[1, 2, 3, 4].map((item, i) => (
+            <img
+                draggable="false"
+                src={`./${item}.jpeg`}
+                key={i}
+                width="100%"
+                alt=""
+            />
+        ))}
+    </Carousel>
+</div>
+```
+
 ## Example
 
 [Live Demo](https://carousel-app-772051431.vercel.app)
@@ -63,14 +89,15 @@ export default App;
 
 ## props
 
-| props            | type                                                                                 | default | description                                        |
-|------------------|--------------------------------------------------------------------------------------|---------|----------------------------------------------------|
-| loop             | boolean                                                                              | true    | loop play                                          |
-| autoPlay         | boolean                                                                              | true    | auto play                                          |
-| interval         | number                                                                               | 2000    | auto play interval                                 |
-| renderArrowLeft  | ({handlePrev: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows, `activeIndex` is current index |
-| renderArrowRight | ({handleNext: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows, `activeIndex` is current index |
-| renderDots       | ({activeIndex: number, setActiveIndex: (index: number) => void;}) => React.ReactNode | null    | custom your dots, `activeIndex` is current index   |
+| props            | type                                                                                 | default | description                                                          |
+|------------------|--------------------------------------------------------------------------------------|---------|----------------------------------------------------------------------|
+| loop             | boolean                                                                              | true    | loop play                                                            |
+| autoPlay         | boolean                                                                              | true    | auto play                                                            |
+| interval         | number                                                                               | 2000    | auto play interval                                                   |
+| renderArrowLeft  | ({handlePrev: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows, `activeIndex` is current index                   |
+| renderArrowRight | ({handleNext: () => void, activeIndex: number}) => React.ReactNode                   | null    | custom your arrows, `activeIndex` is current index                   |
+| renderDots       | ({activeIndex: number, setActiveIndex: (index: number) => void;}) => React.ReactNode | null    | custom your dots, `activeIndex` is current index                     |
+| ref              | React.Ref                                                                            | null    | Carousel ref, support `handleNext`, `handlePrev`, `setIndex` method |
 
 
 

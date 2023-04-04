@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "framer-motion-carousel": "^2.0.0-beta.0",
+    "framer-motion-carousel": "^2.0.3",
     "next": "^12.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

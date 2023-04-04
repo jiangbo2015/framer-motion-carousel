@@ -35,3 +35,9 @@ export type DotProps = {
     activeIndex: number
     setActiveIndex: (index: number) => void;
 }
+
+export type CarouselRef = {
+    handleNext: () => void
+    handlePrev: () => void
+    setIndex: (index: number) => void;
+}

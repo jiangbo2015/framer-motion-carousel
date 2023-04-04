@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.0.3
+
+- [resolve issue #10](https://github.com/jiangbo2015/framer-motion-carousel/issues/10)
+
+## 2.0.2
+
+- [fix issue #6](https://github.com/jiangbo2015/framer-motion-carousel/issues/6)
+
 ## 2.0.0
 
 - upgrade `framer-motion@6`
