@@ -93,7 +93,7 @@ export const Carousel = ({
     return (
         <Contaier ref={containerRef}>
             {childrens.map((child, i) => (
-                <Slider onDragEnd={handleEndDrag} x={x} i={i} key={i}>
+                <Slider onDragEnd={handleEndDrag} totalSliders={childrens.length} x={x} i={i} key={i}>
                     {child}
                 </Slider>
             ))}

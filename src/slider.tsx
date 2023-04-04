@@ -10,7 +10,7 @@ const pageStyle: MotionStyle = {
     flex: "none",
 }
 
-const Slider = ({ x, i, onDragEnd, children }: SliderProps) => (
+const Slider = ({ x, i, onDragEnd, children, totalSliders }: SliderProps) => (
     <motion.div
         style={{
             ...pageStyle,
@@ -18,7 +18,7 @@ const Slider = ({ x, i, onDragEnd, children }: SliderProps) => (
             left: `${i * 100}%`,
             right: `${i * 100}%`,
         }}
-        drag="x"
+        drag={totalSliders > 1 && "x"}
         dragElastic={0.3}
         onDragEnd={onDragEnd}
     >

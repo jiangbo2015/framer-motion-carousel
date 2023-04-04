@@ -27,6 +27,7 @@ export type SliderProps = {
     i: number
     children: React.ReactNode
     onDragEnd: (e: Event, dragProps: PanInfo) => void
+    totalSliders: number
 }
 
 export type DotProps = {
