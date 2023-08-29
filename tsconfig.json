@@ -9,7 +9,6 @@
     "skipLibCheck": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
